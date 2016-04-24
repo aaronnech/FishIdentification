@@ -1,9 +1,15 @@
 var Scraper = require ('images-scraper')
   , bing = new Scraper.Bing();
 
+var args = process.argv.slice(2);
+
+var num = parseInt(args[0]);
+args.shift();
+var searchTerm = args.join(' ');
+
 bing.list({
-	keyword: 'trout fish',
-	num: 1000,
+	keyword: searchTerm,
+	num: num,
 	detail: true
 })
 .then(function (res) {

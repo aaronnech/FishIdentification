@@ -29,6 +29,7 @@ for k, d in enumerate(dets):
         k, d.left(), d.top(), d.right(), d.bottom()))
 
 if s:
+    win = dlib.image_window()
     win.clear_overlay()
     win.set_image(img)
     win.add_overlay(dets)
